@@ -1,0 +1,32 @@
+{
+  "name": "nordcraft-worker-example99",
+  "scripts": {
+    "predev": "bun scripts/syncStaticAssets.js && bunx esbuild --bundle --outdir=dist --platform=node --format=esm src/index.ts",
+    "dev": "wrangler dev --no-bundle",
+    "build": "bun scripts/syncStaticAssets.js && bunx esbuild --bundle --outdir=dist --platform=node --format=esm src/index.ts",
+    "deploy": "wrangler deploy --no-bundle",
+    "typecheck": "tsc --noEmit",
+    "watch": "tsc --noEmit -w",
+    "lint": "eslint --quiet .",
+    "prettier": "prettier --check '*.{json,js}' '**/*.{js,ts}'",
+    "prettier:write": "prettier --write  '*.{json,js}' './**/*.{js,ts}'"
+  },
+  "dependencies": {
+    "@nordcraft/core": "1.0.48",
+    "@nordcraft/ssr": "1.0.48",
+    "hono": "4.9.8"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "4.20250922.0",
+    "@eslint/js": "9.36.0",
+    "@nordcraft/runtime": "1.0.48",
+    "@typescript-eslint/eslint-plugin": "8.44.0",
+    "@typescript-eslint/parser": "8.44.0",
+    "eslint-plugin-inclusive-language": "2.2.1",
+    "eslint": "9.36.0",
+    "prettier-plugin-organize-imports": "4.3.0",
+    "prettier": "3.6.2",
+    "typescript": "5.9.2",
+    "wrangler": "4.38.0"
+  }
+}
